@@ -115,7 +115,6 @@ class MIDatePicker: UIView {
             ]
         )
         
-        
         // Setup picker constraints
         
         frame = CGRect(x: 0, y: UIScreen.mainScreen().bounds.height, width: UIScreen.mainScreen().bounds.width, height: config.contentHeight + config.headerHeight)
@@ -145,6 +144,8 @@ class MIDatePicker: UIView {
     
     // MARK: - Public
     func show(inVC parentVC: UIViewController, completion: (() -> ())? = nil) {
+        
+        parentVC.view.endEditing(true)
         
         setup(parentVC)
         move(goUp: true)
