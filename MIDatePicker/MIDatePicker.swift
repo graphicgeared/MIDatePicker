@@ -24,6 +24,7 @@ class MIDatePicker: UIView {
         private let bouncingOffset: CGFloat = 20
         
         var startDate: NSDate?
+        var maximumDate: NSDate?
         
         var confirmButtonTitle = "Seleziona"
         var cancelButtonTitle = "Annulla"
@@ -82,6 +83,10 @@ class MIDatePicker: UIView {
         
         if let startDate = config.startDate {
             datePicker.date = startDate
+        }
+        
+        if let maximumDate = config.maximumDate {
+            datePicker.date = maximumDate
         }
         
         headerViewHeightConstraint.constant = config.headerHeight
